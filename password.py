@@ -46,6 +46,14 @@ for i in range(part2):
     password.append(s3[i])
     password.append(s4[i])
 
-random.shuffle(password)
-password = "".join(password[0:])
-print("your password is: " + password)
+# confirm the length of the generated password.
+if len(password) < characters_number:
+
+    password.append(s3[characters_number])
+    random.shuffle(password)
+    password = "".join(password[0:])
+    print("your password is: " + password)
+else:
+    random.shuffle(password)
+    password = "".join(password[0:])
+    print("your password is: " + password)
